@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+void minMax(const int *v, int n, int *min, int *max){
+    if (n <= 0) return;
+
+    *min = v[0];
+    *max = v[0];
+    for (int i = 1; i < n; i++){
+        if (v[i] < *min)
+            *min = v[i];
+        if (v[i] > *max)
+            *max = v[i];
+    }
+}
+
+int main(void){
+    int v[] = {12, 7, 30, 4, 18, 9}, n, min = -1, max;
+
+    n = sizeof(v) / sizeof(int);
+    minMax(v, n, &min, &max);
+    if (min != -1){
+        printf("%d %d\n", min, max);
+    }
+
+    return 0;
+}
