@@ -248,7 +248,7 @@ int remove_abaixo_de(Lista* li, float precoMinimo){
         return 0;
     
     int i = 0, cont = 0;
-    while(i < li->qtd){
+    while (i < li->qtd){
         if (li->dados[i].preco < precoMinimo){
             cont++;
             li->qtd--;
@@ -271,10 +271,11 @@ int mescla_listas(Lista* destino, Lista* origem){
         int j = 0;
         while (j < destino->qtd && destino->dados[j].codigo != origem->dados[i].codigo)
             j++;
-        if (j == destino->qtd)  // não encontrado
+        if (j == destino->qtd){  // não encontrado
             destino->dados[destino->qtd] = origem->dados[i];
             destino->qtd++;
             cont++;
+        }
         if (destino->qtd == MAX)  // lista cheia
             return cont;
     }
