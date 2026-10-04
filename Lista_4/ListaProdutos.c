@@ -248,7 +248,7 @@ int remove_abaixo_de(Lista* li, float precoMinimo){
         return 0;
     
     int i = 0, cont = 0;
-    while(i < li->qtd){
+    while (i < li->qtd){
         if (li->dados[i].preco < precoMinimo){
             cont++;
             li->qtd--;
